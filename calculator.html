@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="calci.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("new pic.png");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d9f4ff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #42474b;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 425px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: #000;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+        }
+
+        .inputArea {
+            background-color: #5b6d7c;
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            background-color: #e6e6e6;
+            border: 2px solid #25292c;
+            border-radius: 8px;
+            text-align: right;
+            color: #000;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .buttons div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #25292c;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .buttons div input {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .buttons div:hover {
+            background: #42474b;
+        }
+
+        .btnC input {
+            color: #ff7a00;
+        }
+
+        .btnEq {
+            background: #ff7a00;
+        }
+
+        .btnEq input {
+            color: #000;
+        }
+
+        .btnEq:hover {
+            background: #ff8c1a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            input[type="text"] {
+                font-size: 1.5rem;
+            }
+
+            .buttons div input {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="inputArea">
+            <input id="inputBox" type="text" name="userInput" placeholder="0" disabled />
+        </div>
+        <div class="buttons">
+            <div class="btnC"><input id="ButtonC" type="button" value="C" onclick="clearInput()" /></div>
+            <div class="btnMod"><input id="Button(" type="button" value="(" onclick="appendValue('(')" /></div>
+            <div class="btnSign"><input id="Button)" type="button" value=")" onclick="appendValue(')')" /></div>
+            <div class="btnD"><input id="Button/" type="button" value="/" onclick="appendValue('/')" /></div>
+            <div class="btn7"><input id="Button7" type="button" value="7" onclick="appendValue('7')" /></div>
+            <div class="btn8"><input id="Button8" type="button" value="8" onclick="appendValue('8')" /></div>
+            <div class="btn9"><input id="Button9" type="button" value="9" onclick="appendValue('9')" /></div>
+            <div class="btnX"><input id="Button*" type="button" value="x" onclick="appendValue('*')" /></div>
+            <div class="btn4"><input id="Button4" type="button" value="4" onclick="appendValue('4')" /></div>
+            <div class="btn5"><input id="Button5" type="button" value="5" onclick="appendValue('5')" /></div>
+            <div class="btn6"><input id="Button6" type="button" value="6" onclick="appendValue('6')" /></div>
+            <div class="btnM"><input id="Button-" type="button" value="-" onclick="appendValue('-')" /></div>
+            <div class="btn1"><input id="Button1" type="button" value="1" onclick="appendValue('1')" /></div>
+            <div class="btn2"><input id="Button2" type="button" value="2" onclick="appendValue('2')" /></div>
+            <div class="btn3"><input id="Button3" type="button" value="3" onclick="appendValue('3')" /></div>
+            <div class="btnAdd"><input id="Button+" type="button" value="+" onclick="appendValue('+')" /></div>
+            <div class="btnDecimal"><input id="Button." type="button" value="." onclick="appendValue('.')" /></div>
+            <div class="btn0"><input id="Button0" type="button" value="0" onclick="appendValue('0')" /></div>
+            <div class="btnBack"><input id="Button%" type="button" value="%" onclick="appendValue('%')" /></div>
+            <div class="btnEq"><input id="Button=" type="button" value="=" onclick="calculateResult()" /></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
